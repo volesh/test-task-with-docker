@@ -1,0 +1,40 @@
+{
+  "name": "fulstackcryptoproject",
+  "version": "1.0.0",
+  "prettier": "@company/prettier-config",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "rimraf dist && tsc-watch --onSuccess \" npm run dev \"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "dev": "nodemon ./src/app.ts --watch ./src --onChange \" rimraf dist\" ",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "keywords": [],
+  "author": "Vasyl Olesh",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.13",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "2.8.4",
+    "mongoose": "^6.7.3",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^18.11.13",
+    "nodemon": "^2.0.20",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^4.9.4"
+  }
+}
