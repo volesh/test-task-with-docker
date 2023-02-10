@@ -5,37 +5,34 @@
         "es2021": true
     },
     "extends": [
-        "plugin:prettier/recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
+        "airbnb-base"
     ],
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": "tsconfig.json",
-        "sourceType": "module"
-    },
-    "overrides": [],
-    "plugins": [
-        "@typescript-eslint/eslint-plugin",
-        "simple-import-sort"
+    "overrides": [
     ],
-    "root": true,
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
     "rules": {
-        "@typescript-eslint/interface-name-prefix": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "no-console": "warn",
-        "sort-imports": [
-            "error", {
-            "ignoreCase": true,
-            "ignoreDeclarationSort": true,
-            "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": [
-                "none", "all", "multiple", "single"
-            ],
-            "allowSeparatedGroups": false
-        }]
+        "max-len": ["error", 130],
+        "import/prefer-default-export": "off",
+        "linebreak-style": "off",
+        "comma-dangle": "off",
+        "arrow-body-style": "off",
+        "import/extensions": [
+            "error",
+            {
+                "js": "never",
+                "ts": "never"
+            }
+        ],
+        "no-underscore-dangle":  "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".ts"]
+            }
+        }
     }
 }
