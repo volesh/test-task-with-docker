@@ -24,6 +24,11 @@ app.use((err:any, req:Request, res:Response, next:NextFunction) => {
 });
 
 app.listen(envConfig.PORT, async ():Promise<void> => {
-  await mongoose.connect(envConfig.MONGO_SERVER as string);
+  try {
+    await mongoose.connect(envConfig.MONGO_SERVER);
+    console.log('Connected to db');
+  } catch (e) {
+    console.log(e);
+  }
   console.log(`Working, port listen : ${envConfig.PORT}`);
 });

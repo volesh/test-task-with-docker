@@ -15,5 +15,4 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./envs.config"), exports);
-__exportStar(require("./regexp.config"), exports);
 //# sourceMappingURL=index.js.map

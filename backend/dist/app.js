@@ -45,7 +45,13 @@ app.use((err, req, res, next) => {
     });
 });
 app.listen(configs_1.envConfig.PORT, async () => {
-    await mongoose_1.default.connect(configs_1.envConfig.MONGO_SERVER);
+    try {
+        await mongoose_1.default.connect(configs_1.envConfig.MONGO_SERVER);
+        console.log('Connected to db');
+    }
+    catch (e) {
+        console.log(e);
+    }
     console.log(`Working, port listen : ${configs_1.envConfig.PORT}`);
 });
 //# sourceMappingURL=app.js.map
