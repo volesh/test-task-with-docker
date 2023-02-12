@@ -1,17 +1,24 @@
-import {
-  Schema, model, Document, Model
-} from 'mongoose';
+import { Document, Model, model, Schema } from 'mongoose';
+
 import { IUser } from '../interfaces';
 
-export type UserType = Document & IUser
+export type UserType = Document & IUser;
 
 const userSchema = new Schema<IUser>(
   {
     name: {
-      type: String, require: true, trim: true, required: true
+      type: String,
+      require: true,
+      trim: true,
+      required: true,
     },
     email: {
-      type: String, require: true, unique: true, trim: true, lowercase: true, required: true
+      type: String,
+      require: true,
+      unique: true,
+      trim: true,
+      lowercase: true,
+      required: true,
     },
     password: { type: String, require: true },
   },

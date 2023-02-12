@@ -1,9 +1,9 @@
 import 'reflect-metadata';
-import express, {
-  urlencoded, Request, Response, NextFunction
-} from 'express';
+
 import cors from 'cors';
+import express, { NextFunction, Request, Response, urlencoded } from 'express';
 import mongoose from 'mongoose';
+
 import { envConfig } from './configs';
 import { apiRouter } from './routes';
 
@@ -16,15 +16,16 @@ app.use(urlencoded({ extended: true }));
 app.use('/api/v1', apiRouter);
 
 // eslint-disable-next-line no-unused-vars
-app.use((err:any, req:Request, res:Response, next:NextFunction) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   res.status(err.status || 500).json({
     errorMessage: err.message || 'Unknown error',
-    statusCode: err.status || 500
+    statusCode: err.status || 500,
   });
 });
 
-app.listen(envConfig.PORT, async ():Promise<void> => {
+app.listen(envConfig.PORT, async (): Promise<void> => {
   try {
+    console.log('Start connecting to db');
     await mongoose.connect(envConfig.MONGO_SERVER);
     console.log('Connected to db');
   } catch (e) {

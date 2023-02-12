@@ -1,4 +1,5 @@
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
+
 import { userRepository } from '../reposetories';
 
 export const userController = {
@@ -9,5 +10,5 @@ export const userController = {
     } catch (e) {
       next(e);
     }
-  }
+  },
 };

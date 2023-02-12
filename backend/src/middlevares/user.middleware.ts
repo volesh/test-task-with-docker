@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
+
 import { passwordHelper } from '../helpers';
 
 export const userMiddleware = {
@@ -10,5 +11,5 @@ export const userMiddleware = {
     } catch (e) {
       next(e);
     }
-  }
+  },
 };
